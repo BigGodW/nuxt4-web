@@ -177,6 +177,23 @@ export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
 }
 
+export type EnumOrchidsTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.OrchidsType | Prisma.EnumOrchidsTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOrchidsTypeFilter<$PrismaModel> | $Enums.OrchidsType
+}
+
+export type EnumOrchidsTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OrchidsType | Prisma.EnumOrchidsTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOrchidsTypeWithAggregatesFilter<$PrismaModel> | $Enums.OrchidsType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOrchidsTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOrchidsTypeFilter<$PrismaModel>
+}
+
 export type NestedIntFilter<$PrismaModel = never> = {
   equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
@@ -351,6 +368,23 @@ export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type NestedEnumOrchidsTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.OrchidsType | Prisma.EnumOrchidsTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOrchidsTypeFilter<$PrismaModel> | $Enums.OrchidsType
+}
+
+export type NestedEnumOrchidsTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OrchidsType | Prisma.EnumOrchidsTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OrchidsType[] | Prisma.ListEnumOrchidsTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOrchidsTypeWithAggregatesFilter<$PrismaModel> | $Enums.OrchidsType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOrchidsTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOrchidsTypeFilter<$PrismaModel>
 }
 
 

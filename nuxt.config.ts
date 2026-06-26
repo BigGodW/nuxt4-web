@@ -11,5 +11,10 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-  modules: ['@vant/nuxt'],
+  modules: ['@vant/nuxt','@vueuse/nuxt'],
+  runtimeConfig:{
+    public:{
+      ioUrl:process.env.NUXT_IOURL
+    }
+  }
 })

@@ -9,7 +9,15 @@
 * 🟢 You can import this file directly.
 */
 
+export const OrchidsType = {
+  春兰: '春兰',
+  春剑: '春剑',
+  蕙兰: '蕙兰',
+  莲瓣兰: '莲瓣兰',
+  夏兰: '夏兰',
+  寒兰: '寒兰',
+  墨兰: '墨兰',
+  其他: '其他'
+} as const
 
-
-// This file is empty because there are no enums in the schema.
-export {}
+export type OrchidsType = (typeof OrchidsType)[keyof typeof OrchidsType]

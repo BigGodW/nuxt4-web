@@ -149,6 +149,9 @@ useHead({
 })
 
 // 角色与socket连接状态
+const config = useRuntimeConfig()
+const socketUrl = config.public.ioUrl
+console.log(socketUrl)
 const role = ref('user')
 const showBid = ref(false)
 const showStop = ref(false)
@@ -281,7 +284,7 @@ const clearAll = () => {
 onMounted(() => {
   const initSocket = () => {
     if (!window.io) return setTimeout(initSocket, 100)
-    socket = io('http://47.109.179.80:3001')
+    socket = io(socketUrl)
     socket.on('connect', () => connected.value = true)
     socket.on('disconnect', () => connected.value = false)
     socket.on('rise', startBid)

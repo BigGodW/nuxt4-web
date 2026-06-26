@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs'
 export default defineEventHandler(async (event) => {
   // 读取POST请求body参数
   const body = await readBody(event)

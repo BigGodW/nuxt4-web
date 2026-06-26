@@ -52,3 +52,18 @@ export type ArticleCategory = Prisma.ArticleCategoryModel
  * 
  */
 export type ArticleTag = Prisma.ArticleTagModel
+/**
+ * Model Zone
+ * 
+ */
+export type Zone = Prisma.ZoneModel
+/**
+ * Model Orchid
+ * 
+ */
+export type Orchid = Prisma.OrchidModel
+/**
+ * Model Inventory
+ * 
+ */
+export type Inventory = Prisma.InventoryModel

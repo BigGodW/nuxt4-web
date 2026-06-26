@@ -9,7 +9,8 @@
       <label>密码</label>
       <input v-model="form.password" type="password" placeholder="请输入密码" />
     </div>
-    <button @click="handleLogin">登录</button>
+    <button @click="handleLogin" class="m-2">登录</button>
+    <button class="btn btn-error m-2" @click="addAdmin">默认注册</button>
     <p style="color: red;" v-if="errorMsg">{{ errorMsg }}</p>
   </div>
 </template>
@@ -19,7 +20,9 @@
 const router = useRouter()
 // 存储登录token到cookie，有效期7天
 const tokenCookie = useCookie('admin_token', { maxAge: 7 * 24 * 3600 })
-
+const addAdmin = async ()=>{
+    
+}
 // 表单响应式数据
 const form = ref({
   username: '',
@@ -27,6 +30,8 @@ const form = ref({
 })
 // 错误提示文本
 const errorMsg = ref('')
+
+
 
 // 登录提交函数
 async function handleLogin() {

@@ -57,7 +57,10 @@ export const ModelName = {
   Admin: 'Admin',
   Article: 'Article',
   ArticleCategory: 'ArticleCategory',
-  ArticleTag: 'ArticleTag'
+  ArticleTag: 'ArticleTag',
+  Zone: 'Zone',
+  Orchid: 'Orchid',
+  Inventory: 'Inventory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -157,6 +160,40 @@ export const ArticleTagScalarFieldEnum = {
 } as const
 
 export type ArticleTagScalarFieldEnum = (typeof ArticleTagScalarFieldEnum)[keyof typeof ArticleTagScalarFieldEnum]
+
+
+export const ZoneScalarFieldEnum = {
+  code: 'code',
+  capacity: 'capacity',
+  currentCount: 'currentCount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ZoneScalarFieldEnum = (typeof ZoneScalarFieldEnum)[keyof typeof ZoneScalarFieldEnum]
+
+
+export const OrchidScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  type: 'type',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OrchidScalarFieldEnum = (typeof OrchidScalarFieldEnum)[keyof typeof OrchidScalarFieldEnum]
+
+
+export const InventoryScalarFieldEnum = {
+  id: 'id',
+  zoneCode: 'zoneCode',
+  orchidId: 'orchidId',
+  quantity: 'quantity',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InventoryScalarFieldEnum = (typeof InventoryScalarFieldEnum)[keyof typeof InventoryScalarFieldEnum]
 
 
 export const SortOrder = {

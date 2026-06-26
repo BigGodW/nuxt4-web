@@ -85,3 +85,54 @@ model ArticleTag {
 
   articles Article[]
 }
+
+// 兰花品类枚举
+enum OrchidsType {
+  春兰
+  春剑
+  蕙兰
+  莲瓣兰
+  夏兰
+  寒兰
+  墨兰
+  其他
+}
+
+model Zone {
+  code          String        @id @db.VarChar(4)
+  capacity      Int?          @default(132)
+  currentCount  Int?          @default(0)
+  createdAt     DateTime      @db.Timestamp(0) @default(now())
+  updatedAt     DateTime      @db.Timestamp(0) @updatedAt
+  inventories   Inventory[]
+
+  @@map("zones")
+}
+
+model Orchid {
+  id          Int             @id @default(autoincrement())
+  name        String          @db.VarChar(100)
+  type        OrchidsType
+  createdAt   DateTime        @db.Timestamp(0) @default(now()) // 新增默认当前时间
+  updatedAt   DateTime        @db.Timestamp(0) @updatedAt     // 自动更新时间
+  inventories Inventory[]
+
+  @@unique([name, type], map: "orchids_name_type")
+  @@map("orchids")
+}
+
+model Inventory {
+  id        Int           @id @default(autoincrement())
+  zoneCode  String?      @db.VarChar(4) @map("zone_code")
+  orchidId  Int?         @map("orchid_id")
+  quantity  Int?         @default(0)
+  createdAt DateTime     @db.Timestamp(0) @map("created_at") @default(now())
+  updatedAt DateTime     @db.Timestamp(0) @map("updated_at") @updatedAt
+
+  zone   Zone?   @relation(fields: [zoneCode], references: [code], onDelete: Cascade, map: "inventories_ibfk_31")
+  orchid Orchid? @relation(fields: [orchidId], references: [id], onDelete: Cascade, map: "inventories_ibfk_32")
+
+  @@unique([zoneCode, orchidId], map: "inventories_zone_code_orchid_id")
+  @@index([orchidId], map: "orchid_id")
+  @@map("inventories")
+}
